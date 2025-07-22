@@ -1,19 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Footer } from './components/footer'
-import { Header } from './components/header'
+import React from 'react';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, Outlet } from 'react-router-dom';
+import './App.css';
+import { Footer } from './components/footer';
+import { Home } from './pages/home';
+import { Shop } from './pages/shop';
+import { About } from './pages/about';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// Create a Layout component to hold shared UI elements
+const Layout = () => {
   return (
     <>
-      <Header />
+      {/* Outlet renders the matching child route */}
+      <Outlet />
       <Footer />
     </>
+  );
+};
+
+// Define routes using the Layout as the root element
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="shop" element={<Shop />} />
+      <Route path="about" element={<About />} />
+    </Route>
   )
+);
+
+// App component just provides the router
+function App() {
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
