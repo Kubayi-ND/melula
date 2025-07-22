@@ -1,13 +1,14 @@
 import {Header} from '../components/header';
-
+import aboutImage from '../assets/headersabout.jpg'
 export const About = () => {
   return (
     <div>
-      <Header         
+      <Header    
+        backgroundImage={aboutImage}     
       title="ABOUT"
         subtitle={<></>}
-        buttonText="VISIT OUR SHOP"
-        showButton={false} // Explicitly hide the button
+        buttonText="SHOP"
+         
       />
       <main className="p-8">
         <h1 className="text-4xl font-bold mb-6">About Us</h1>
