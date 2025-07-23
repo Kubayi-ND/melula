@@ -26,19 +26,19 @@ export const Home = () => {
         buttonText="VISIT OUR SHOP"
         buttonLink="shop"
       />
-      <main className="">
-        <div className='flex'>
-          <img src={homeImage1} alt="Hero" className="w-full h-auto min-h-[100px] max-h-[750px]"  />
+      <main >
+        <div className='lg:flex '>
+          <img src={homeImage1} alt="Hero" className="w-full h-auto min-h-[300px] max-h-[750px]"  />
           <img src={homeImage2} alt="Hero 2" className="w-full h-auto min-h-[300px] max-h-[750px]" />
         </div>
 
-        <div className='bg-[#002d5a] text-white py-20 px-40 text-left min-h-[50vh]'>
+        <div className='w-full h-auto lg:h-[70vh] flex flex-col justify-center bg-[#002d5a] text-white py-20 md:px-55 px-20 text-left  '>
           <h2 className='text-3xl pb-8'>Melula Kids shoes</h2>
           <p className='text-3xl'>Melula a Copenhagen based kids fashion brand. Colourful, playfull and gender neutral. Designed in Denmark, produced in Portugal.</p>
           <span>| &nbsp;</span><a href='#' className='text-green-300 underline'> Read our story.</a>
         </div>
         
-        <div className='flex h-auto  min-h-[500px] max-h-[100vh]'>
+        <div className='md:flex h-auto  min-h-[500px] md:max-h-[100vh]'>
           <div>
             <img src={homeImage3} alt="Home Image 3" className="w-full h-full min-h-[500px] " />
           </div>
@@ -48,7 +48,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className='flex h-auto  min-h-[500px] max-h-[100vh]'>
+        <div className='md:flex h-auto  min-h-[500px] md:max-h-[100vh]'>
           <div className='flex flex-col justify-between'>
             <img src={homeImage6} alt="Home Image 6" className="w-full h-auto min-h-[250px]  " />
             <img src={homeImage7} alt="Home Image 5" className="w-full h-auto min-h-[250px]  " />
@@ -58,7 +58,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className='flex h-auto  min-h-[500px] max-h-[100vh]'>
+        <div className='md:flex h-auto  min-h-[500px] md:max-h-[100vh]'>
           <div>
             <img src={homeImage9} alt="Home Image 3" className="w-full h-full min-h-[500px] " />
           </div>
@@ -75,8 +75,8 @@ export const Home = () => {
           
         </div>
 
-        <div className='w-full flex px-[5%] py-[4] gap-16 mb-40' >
-          <div className='w-[50%] p-4'>
+        <div className='w-full md:flex  justify-center items-center  md:px-[5%] py-[4] gap-16 mb-40' >
+          <div className='md:w-[50%] p-4'>
             <div className='flex'>
               <h2 className='text-3xl text-[#002d5a] text-left'>Follow us on Instagram &nbsp;</h2>
               <h2 className='text-3xl text-[#002d5a] text-left'> <a href='#'>@melula_copenhagen<hr className='mx-1 mb-6 border-gray-300' /></a></h2>
@@ -86,11 +86,11 @@ export const Home = () => {
               <img src={homeSocialImage2} alt="Social Image 2" className="w-[50%] h-auto" />
             </div>
           </div>
-          <div  className='w-[50%] p-9'>
+          <div  className='md:w-[50%] p-9'>
             <form className='flex flex-col justify-centre gap-6'>
               <label className='text-3xl'>Subscribe</label>
               <p>Sign up with your email address to receive news and updates.</p>
-              <div className='flex flex-col lg:flex-row mx-auto gap-2'>
+              <div className='flex flex-col justify-center items-center lg:flex-row mx-auto gap-2'>
                 <input type="email" placeholder="Email Address" className='border border-gray-300 rounded h-12 p-2 w-61 mt-2' />
                 <button type="submit" className='bg-[#1ff4bf] text-white px-4 py-2 rounded h-12 mt-2 w-34 '>SIGN UP</button>
               </div>
