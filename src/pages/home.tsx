@@ -27,15 +27,16 @@ export const Home = () => {
         buttonLink="shop"
       />
       <main >
-        <div className='lg:flex '>
-          <img src={homeImage1} alt="Hero" className="w-full h-auto min-h-[300px] max-h-[750px]"  />
-          <img src={homeImage2} alt="Hero 2" className="w-full h-auto min-h-[300px] max-h-[750px]" />
+        <div className='md:flex '>
+          
+            <img src={homeImage1} alt="Hero" className="w-[50%] h-auto min-h-[300px] max-h-[750px]"  />
+            <img src={homeImage2} alt="Hero 2" className="w-[50%] h-auto min-h-[300px] max-h-[750px]" />
         </div>
 
-        <div className='w-full h-auto lg:h-[70vh] flex flex-col justify-center bg-[#002d5a] text-white py-20 md:px-55 px-20 text-left  '>
+        <div className='w-full h-auto lg:h-[70vh] flex flex-col justify-center bg-[#002d5a] text-white py-20 px-4 md:px-55  text-left  '>
           <h2 className='text-3xl pb-8'>Melula Kids shoes</h2>
-          <p className='text-3xl'>Melula a Copenhagen based kids fashion brand. Colourful, playfull and gender neutral. Designed in Denmark, produced in Portugal.</p>
-          <span>| &nbsp;</span><a href='#' className='text-green-300 underline'> Read our story.</a>
+          <p className='text-3xl pb-8'>Melula a Copenhagen based kids fashion brand. Colourful, playfull and gender neutral. Designed in Denmark, produced in Portugal.</p>
+          <a href='about' className='text-[#3dffc2] underline border-l border-gray-400 pl-4 hover:opacity-75'> Read our story.</a>
         </div>
         
         <div className='md:flex h-auto  min-h-[500px] md:max-h-[100vh]'>
@@ -75,15 +76,20 @@ export const Home = () => {
           
         </div>
 
-        <div className='w-full md:flex  justify-center items-center  md:px-[5%] py-[4] gap-16 mb-40' >
+        <div className='w-full md:flex  justify-center items-center  md:px-[5%] py-[4] gap-2 mb-40' >
           <div className='md:w-[50%] p-4'>
-            <div className='flex'>
+            <div className='lg:flex'>
               <h2 className='text-3xl text-[#002d5a] text-left'>Follow us on Instagram &nbsp;</h2>
-              <h2 className='text-3xl text-[#002d5a] text-left'> <a href='#'>@melula_copenhagen<hr className='mx-1 mb-6 border-gray-300' /></a></h2>
+              <h2 className='text-3xl text-[#002d5a] text-left'> <a href='#'>@melula_copenhagen</a><hr className='w-[90%]  lg:w-[100%] mb-6 border-gray-300' /></h2>
             </div>
-            <div className='flex  gap-2'>
-              <img src={homeSocialImage1} alt="Social Image 1" className="w-[50%] h-auto" />
-              <img src={homeSocialImage2} alt="Social Image 2" className="w-[50%] h-auto" />
+            <div className='flex gap-2'>
+              <a href='https://www.instagram.com/p/Bd7AfU7nc1Z/' target='_blank'>
+                <img src={homeSocialImage1} alt="Social Image 1" className="w-full h-auto" />
+              
+              </a>
+              <a href='https://www.instagram.com/p/BcM-z4fHudE/' target='_blank'>
+                <img src={homeSocialImage2} alt="Social Image 2" className="w-full h-auto" />
+              </a>
             </div>
           </div>
           <div  className='md:w-[50%] p-9'>

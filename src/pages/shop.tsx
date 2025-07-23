@@ -51,14 +51,14 @@ export const Shop = () => {
         showButton={false}
         
       />
-      <main className="p-16 text-center">
-        <ul className='flex justify-center space-x-6 my-4'>
-          <li><a href="#">Alle</a></li>
-          <li><a href="#">Kids Shoes</a></li>
-          <li><a href="#">No-tie Laces</a></li>
+      <main className="p-4 md:p-20 text-center">
+        <ul className='flex justify-center space-x-6 my-4 '>
+          <li><a href="#" className='hover:text-gray-500'>Alle</a></li>
+          <li><a href="#" className='hover:text-gray-500'>Kids Shoes</a></li>
+          <li><a href="#" className='hover:text-gray-500'>No-tie Laces</a></li>
         </ul>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8 ">
           {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

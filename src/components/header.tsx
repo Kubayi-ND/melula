@@ -9,8 +9,8 @@ type HeaderProps = {
   buttonText?: string;
   buttonLink?: string;
   showButton?: boolean;
-  className?: string; 
-  
+  className?: string;
+  cartItemCount?: number; // Add new prop for cart item count
 };
 
 export const Header = ({
@@ -21,6 +21,7 @@ export const Header = ({
   buttonLink = "",
   showButton = true,
   className = "",
+  cartItemCount = 0, // Default to 0 items
 }: HeaderProps) => {
 
   // Only show the button if explicitly enabled AND we have button text
@@ -41,9 +42,14 @@ export const Header = ({
             <li><a href="about" className="hover:text-gray-300">ABOUT</a></li>
           </ul>
         </nav>
-        <div className="pr-8">
+        <div className="pr-8 relative">
           <a href="#" className="text-white hover:text-white">
             <ShoppingCart className="h-8 w-8" />
+            {cartItemCount >= 0 && (
+              <span className="absolute -top-1  left-5 bg-[#fbb498] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                {cartItemCount}
+              </span>
+            )}
           </a>
         </div>   
       </div>
@@ -57,10 +63,10 @@ export const Header = ({
         </h1>
       </div>
       
-      {showButton && (
+      {shouldShowButton && (
         <div className='pt-8'>
           <a 
-            className="bg-[#0df8ad] text-white text-[18px] hover:bg-green-300 mt-4 rounded-full text-md font-semibold py-5 px-10" 
+            className="bg-[#0df8ad] text-white text-[18px] hover:opacity-75 mt-4 rounded-full text-md font-semibold py-5 px-10" 
             href={buttonLink}
           >
             {buttonText}

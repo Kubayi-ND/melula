@@ -2,10 +2,10 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#002d5a] text-white p-16 text-center w-[full]">
+    <footer className="bg-[#002d5a] text-white md:p-16 text-center w-[full]">
       <div className="p-4">
-        <p className="text-sm mx-16">
-            <span className="text-lg text-green-300 font-medium ">Melula</span>&nbsp; &nbsp; 11 Dannvirke street, Copenhagen, 1763, Denmark hello@melula.com
+        <p className="text-sm md:mx-16 py-6">
+            <span className="text-lg text-green-300 font-medium">Melula</span>&nbsp; &nbsp; 11 Dannvirke street, Copenhagen, 1763, Denmark <a href='mailto:hello@melula.com' target='_blank' className="hover:text-gray-300">hello@melula.com</a>
         </p>
       </div>
       
@@ -27,14 +27,14 @@ export const Footer = () => {
             </a>
         </div>
 
-      <div className="text-xs font-medium p-4">
-        <a href="#" className="px-2">
+      <div className="text-xs font-light py-4">
+        <a href="#" className="px-2 hover:text-gray-300">
             CONTACT & WHOLESALE
         </a>
-         <a href="#" className="px-2">
+         <a href="#" className="px-2 hover:text-gray-300">
             TERMS AND CONDITIONS
         </a>
-         <a href="#" className="px-2">
+         <a href="#" className="px-2 hover:text-gray-300">
             SHIPPING AND RETURNS
         </a>
       </div>
