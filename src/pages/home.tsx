@@ -20,7 +20,7 @@ export const Home = () => {
   return (
     <div>
       <Header 
-        
+        className=' h-[80vh] '
         title="FOR COLOURFUL"
         subtitle={<><span> STEPS IN</span><span>&nbsp;LIFE</span></>}
         buttonText="VISIT OUR SHOP"

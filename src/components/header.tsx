@@ -9,6 +9,8 @@ type HeaderProps = {
   buttonText?: string;
   buttonLink?: string;
   showButton?: boolean;
+  className?: string; 
+  
 };
 
 export const Header = ({
@@ -18,6 +20,7 @@ export const Header = ({
   buttonText = "",
   buttonLink = "",
   showButton = true,
+  className = "",
 }: HeaderProps) => {
 
   // Only show the button if explicitly enabled AND we have button text
@@ -26,7 +29,7 @@ export const Header = ({
   return (
     <header 
       style={{ backgroundImage: `url(${backgroundImage})` }} 
-      className="bg-center bg-cover text-white pt-12 px-24 h-[80vh]"
+      className={`bg-center bg-cover text-white pt-12 px-24 ${className}`}
     >
       <div className="flex justify-between items-center">
         <a href="/">

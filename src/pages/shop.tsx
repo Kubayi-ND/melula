@@ -4,6 +4,7 @@ export const Shop = () => {
   return (
     <div>
       <Header 
+      className=' h-[50vh] '
         title="Shop"
         subtitle={<span></span>}
         showButton={false}
