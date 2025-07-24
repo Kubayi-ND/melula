@@ -9,7 +9,7 @@ export const About = () => {
   return (
     <div>
       <Header    
-        className=' h-[70vh] '
+        className='h-[50vh] md:h-[70vh] bg-top bg-cover'
         backgroundImage={aboutImage}     
         title="ABOUT"
         subtitle={<></>}
@@ -17,7 +17,7 @@ export const About = () => {
          
       />
       <main >
-        <div className='py-20 px-50 text-left'>
+        <div className='py-20 px-4 md:px-50 text-left'>
 
           <h1 className="text-3xl text-[#002d5a] ffont-thin mb-6">Founders</h1>
           <p className="mb-4 text-sm">
@@ -72,7 +72,7 @@ export const About = () => {
           </p>
 
         </div>
-        <div className='flex flex-wrap justify-center gap-10 px-4 py-34'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-10 px-4 py-16'>
           <img src={aboutImage1} alt="About Image 1" className="max-h-[300px] w-[400px] object-cover" />
           <img src={aboutImage2} alt="About Image 2" className="max-h-[300px] w-[400px] object-cover" />
           <img src={aboutImage3} alt="About Image 3" className="max-h-[300px] w-[400px] object-cover" />

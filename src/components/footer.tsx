@@ -27,14 +27,14 @@ export const Footer = () => {
             </a>
         </div>
 
-      <div className="text-xs font-light py-4">
-        <a href="#" className="px-2 hover:text-gray-300">
+      <div className="p-5 text-[11px] font-medium">
+        <a href="#" className="px-1 hover:text-gray-300">
             CONTACT & WHOLESALE
         </a>
-         <a href="#" className="px-2 hover:text-gray-300">
+         <a href="#" className="px-1 hover:text-gray-300">
             TERMS AND CONDITIONS
         </a>
-         <a href="#" className="px-2 hover:text-gray-300">
+         <a href="#" className="px-1 hover:text-gray-300">
             SHIPPING AND RETURNS
         </a>
       </div>

@@ -45,7 +45,7 @@ export const Shop = () => {
   return (
     <div>
       <Header 
-      className=' h-[50vh] '
+        className=' h-[50vh] bg-center '
         title="Shop"
         subtitle={<span></span>}
         showButton={false}

@@ -1,5 +1,7 @@
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import defaultHeaderImage from '../assets/headershop.jpg';
+import '../App.css';
+import React, { useState, useEffect } from 'react';
 
 // Define types for the Header component props
 type HeaderProps = {
@@ -24,41 +26,149 @@ export const Header = ({
   cartItemCount = 0, // Default to 0 items
 }: HeaderProps) => {
 
+  // Add state to track if Shop link is hovered
+  const [isShopHovered, setIsShopHovered] = useState(false);
+  const [isAboutHovered, setIsAboutHovered] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check if we're on mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is typical md breakpoint
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   // Only show the button if explicitly enabled AND we have button text
   const shouldShowButton = showButton && !!buttonText;
 
+
   return (
-    <header 
-      style={{ backgroundImage: `url(${backgroundImage})` }} 
-      className={`bg-center bg-cover text-white pt-12 px-24 ${className}`}
-    >
-      <div className="flex justify-between items-center">
-        <a href="/">
-          <img src="/logo.png" alt="Vite logo" className="h-auto w-40" />
-        </a>
-        <nav className='p-4'>
-          <ul className="flex space-x-4 text-center text-md font-bold">
-            <li><a href="shop" className="hover:text-gray-300">SHOP</a></li>
-            <li><a href="about" className="hover:text-gray-300">ABOUT</a></li>
-          </ul>
-        </nav>
-        <div className="pr-8 relative">
-          <a href="#" className="text-white hover:text-white">
-            <ShoppingCart className="h-8 w-8" />
-            {cartItemCount >= 0 && (
-              <span className="absolute -top-1  left-5 bg-[#fbb498] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
-                {cartItemCount}
-              </span>
-            )}
+    <>
+      {/* Mobile Navigation Bar */}
+      {isMobile && (
+        <div className="bg-[#002d5a] text-white w-full p-6 flex justify-between items-center">
+          <a href="/" className="flex-shrink-0">
+            <img src="/logo.png" alt="Vite logo" className="h-auto w-24" />
           </a>
-        </div>   
-      </div>
+
+            <div className="relative mr-6">
+              <a href="#" className="text-white">
+                <ShoppingCart className="flex  h-8 w-8" />
+                {cartItemCount >= 0 && (
+                  <span className="absolute -top-1 -right-2 bg-[#fbb498] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {cartItemCount}
+                  </span>
+                )}
+              </a>
+            </div>
+            
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className="text-white focus:outline-none"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          
+        </div>
+      )}
       
-      <div className="mt-19 text-wrap"> 
-        <h1 className="text-[67px] text-white text-center">
+      {/* Mobile Slide Menu */}
+      {isMobile && isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-white z-50 ">
+          <button 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-4 left-4 text-black"
+          >
+            <X size={24} />
+          </button>
+          <nav className="p-4 text-center">
+            <ul className="pt-8  flex flex-col space-y-8 text-center text-2xl font-semibold">
+              <li>
+                <a 
+                  href="shop" 
+                  className="text-black "
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  SHOP
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="about" 
+                  className="text-black "
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  ABOUT
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
+    
+      <header 
+        style={{ backgroundImage: `url(${backgroundImage})` }} 
+        className={`text-white md:pt-12 px-4 md:px-24 bg- ${className}`}
+      >
+        {/* Desktop Navigation */}
+        {!isMobile && (
+          <div className="flex justify-between items-center">
+            <a href="/">
+              <img src="/logo.png" alt="Vite logo" className="h-auto w-40" />
+            </a>
+            <nav className='p-4'>
+              <ul className="flex space-x-4 text-center text-md font-bold">
+                <li>
+                  <a 
+                    href="shop" 
+                    className={isShopHovered ? "text-gray-200" : "text-white"}
+                    onMouseEnter={() => setIsAboutHovered(true)}
+                    onMouseLeave={() => setIsAboutHovered(false)}
+                  >
+                    SHOP
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="about" 
+                    className={isAboutHovered ? "text-gray-200" : "text-white"}
+                    onMouseEnter={() => setIsShopHovered(true)}
+                    onMouseLeave={() => setIsShopHovered(false)}
+                  >
+                    ABOUT
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className="pr-8 relative">
+              <a href="#" className="text-white hover:text-white">
+                <ShoppingCart className="h-8 w-8" />
+                {cartItemCount >= 0 && (
+                  <span className="absolute -top-1 left-5 bg-[#fbb498] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                    {cartItemCount}
+                  </span>
+                )}
+              </a>
+            </div>   
+          </div>
+        )}
+      
+      
+      <div className=" pt-6 md:mt-19 text-wrap "> 
+        <h1 className='text-[60px] lg:text-[67px] text-white text-center  '>
           <span>{title}</span>
         </h1>
-        <h1 className="text-[67px] text-white text-center">
+        <h1 className="text-[60px] md:text-[67px] text-white text-center">
           {subtitle}
         </h1>
       </div>
@@ -74,5 +184,6 @@ export const Header = ({
         </div>
       )}
     </header>
+    </>
   );
 }
