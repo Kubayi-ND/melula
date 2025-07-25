@@ -125,7 +125,7 @@ export const Header = ({
     
       <header 
         style={{ backgroundImage: `url(${backgroundImage})` }} 
-        className={`text-white md:pt-12 px-4 md:px-24 bg-scroll ${className}`}
+        className={`text-white md:pt-12 px-4 md:px-24 bg-fixed ${className}`}
       >
         {/* Desktop Navigation */}
         {!isMobile && (
