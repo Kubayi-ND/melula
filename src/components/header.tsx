@@ -1,7 +1,6 @@
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import defaultHeaderImage from '../assets/headershop.jpg';
-
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 import { useCart } from './ui/cartContext';
@@ -100,25 +99,24 @@ export const Header = ({
             <X size={24} />
           </button>
           <nav className="p-4 text-center">
-            <ul className="pt-8  flex flex-col space-y-8 text-center text-2xl font-semibold">
+            <ul className="pt-8 flex flex-col space-y-8 text-center text-2xl font-semibold">
               <li>
-                
-                <a 
-                  href="shop" 
-                  className="text-black "
+                <NavLink 
+                  to="/shop" 
+                  className="text-black"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   SHOP
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a 
-                  href="about" 
-                  className="text-black "
+                <NavLink 
+                  to="/about" 
+                  className="text-black"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   ABOUT
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>
@@ -127,7 +125,7 @@ export const Header = ({
     
       <header 
         style={{ backgroundImage: `url(${backgroundImage})` }} 
-        className={`text-white md:pt-12 px-4 md:px-24 bg- ${className}`}
+        className={`text-white md:pt-12 px-4 md:px-24 bg-scroll ${className}`}
       >
         {/* Desktop Navigation */}
         {!isMobile && (
@@ -138,24 +136,28 @@ export const Header = ({
             <nav className='p-4'>
               <ul className="flex space-x-4 text-center text-md font-bold">
                 <li>
-                  <a 
-                    href="shop" 
-                    className={isShopHovered ? "text-gray-200" : "text-white"}
-                    onMouseEnter={() => setIsAboutHovered(true)}
-                    onMouseLeave={() => setIsAboutHovered(false)}
-                  >
-                    SHOP
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="about" 
-                    className={isAboutHovered ? "text-gray-200" : "text-white"}
+                  <NavLink 
+                    to="/shop" 
+                    className={({ isActive }) => 
+                      isActive ? "text-gray-200" : "text-white"
+                    }
                     onMouseEnter={() => setIsShopHovered(true)}
                     onMouseLeave={() => setIsShopHovered(false)}
                   >
+                    SHOP
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink 
+                    to="/about" 
+                    className={({ isActive }) => 
+                      isActive ? "text-gray-200" : "text-white"
+                    }
+                    onMouseEnter={() => setIsAboutHovered(true)}
+                    onMouseLeave={() => setIsAboutHovered(false)}
+                  >
                     ABOUT
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
