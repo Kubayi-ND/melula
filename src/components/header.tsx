@@ -1,8 +1,11 @@
 import { ShoppingCart, Menu, X } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 import defaultHeaderImage from '../assets/headershop.jpg';
+
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 import { useCart } from './ui/cartContext';
+
 
 // Define types for the Header component props
 type HeaderProps = {
@@ -65,14 +68,16 @@ export const Header = ({
           </a>
 
             <div className="relative mr-6">
-              <a href="#" className="text-white">
-                <ShoppingCart className="flex  h-8 w-8" />
+              <NavLink to="#">
+                   <ShoppingCart className="flex  h-8 w-8" />
                 {cartItemCount >= 0 && (
                   <span className="absolute -top-1 -right-2 bg-[#fbb498] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     {cartItemCount}
                   </span>
                 )}
-              </a>
+              </NavLink>
+               
+            
             </div>
             
             <button 
@@ -97,8 +102,9 @@ export const Header = ({
           <nav className="p-4 text-center">
             <ul className="pt-8  flex flex-col space-y-8 text-center text-2xl font-semibold">
               <li>
+                
                 <a 
-                  href="../shop" 
+                  href="shop" 
                   className="text-black "
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -107,7 +113,7 @@ export const Header = ({
               </li>
               <li>
                 <a 
-                  href="../about" 
+                  href="about" 
                   className="text-black "
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -133,7 +139,7 @@ export const Header = ({
               <ul className="flex space-x-4 text-center text-md font-bold">
                 <li>
                   <a 
-                    href="../shop" 
+                    href="shop" 
                     className={isShopHovered ? "text-gray-200" : "text-white"}
                     onMouseEnter={() => setIsAboutHovered(true)}
                     onMouseLeave={() => setIsAboutHovered(false)}
@@ -143,7 +149,7 @@ export const Header = ({
                 </li>
                 <li>
                   <a 
-                    href="../about" 
+                    href="about" 
                     className={isAboutHovered ? "text-gray-200" : "text-white"}
                     onMouseEnter={() => setIsShopHovered(true)}
                     onMouseLeave={() => setIsShopHovered(false)}
