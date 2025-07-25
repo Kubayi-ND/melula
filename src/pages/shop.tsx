@@ -1,6 +1,6 @@
 import {Header} from '../components/header';
-import { ProductCard } from '../components/productcard';
-import bueImage from '../assets/Bue.jpg';
+import { ProductCard } from '../components/productCard';
+import bueImage from '../assets/bue.jpg';
 import skjold from '../assets/skjold.jpg';
 import fille from '../assets/fille.jpg';
 import mikka from '../assets/mikka.jpg';

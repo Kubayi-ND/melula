@@ -2,6 +2,7 @@ import { ShoppingCart, Menu, X } from 'lucide-react';
 import defaultHeaderImage from '../assets/headershop.jpg';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
+import { useCart } from './ui/cartContext';
 
 // Define types for the Header component props
 type HeaderProps = {
@@ -23,8 +24,10 @@ export const Header = ({
   buttonLink = "",
   showButton = true,
   className = "",
-  cartItemCount = 0, // Default to 0 items
 }: HeaderProps) => {
+  // Use the cart context
+  const { cart } = useCart?.() || { cart: [] };
+  const cartItemCount = cart?.length || 0;
 
   // Add state to track if Shop link is hovered
   const [isShopHovered, setIsShopHovered] = useState(false);

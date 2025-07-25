@@ -5,6 +5,7 @@ import { Footer } from './components/footer';
 import { Home } from './pages/home';
 import { Shop } from './pages/shop';
 import { About } from './pages/about';
+import { CartProvider } from './components/ui/cartContext';
 
 // Create a Layout component to hold shared UI elements
 const Layout = () => {
@@ -30,7 +31,11 @@ const router = createBrowserRouter(
 
 // App component just provides the router
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
 export default App;

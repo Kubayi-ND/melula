@@ -22,3 +22,10 @@ declare module "*.gif" {
   const src: string;
   export default src;
 }
+
+// Support for importing JS/JSX files in TypeScript
+declare module "*.jsx" {
+  import * as React from 'react';
+  const component: React.ComponentType<any>;
+  export default component;
+}
