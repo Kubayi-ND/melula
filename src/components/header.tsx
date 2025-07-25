@@ -98,7 +98,7 @@ export const Header = ({
             <ul className="pt-8  flex flex-col space-y-8 text-center text-2xl font-semibold">
               <li>
                 <a 
-                  href="./pages/shop" 
+                  href="../pages/shop" 
                   className="text-black "
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -107,7 +107,7 @@ export const Header = ({
               </li>
               <li>
                 <a 
-                  href="./pages/about" 
+                  href="../pages/about" 
                   className="text-black "
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
