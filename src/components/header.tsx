@@ -139,7 +139,7 @@ export const Header = ({
                   <NavLink 
                     to="/shop" 
                     className={({ isActive }) => 
-                      isActive ? "text-gray-200" : "text-white"
+                      isActive ? "text-white" : "text-white"
                     }
                     onMouseEnter={() => setIsShopHovered(true)}
                     onMouseLeave={() => setIsShopHovered(false)}
@@ -151,7 +151,7 @@ export const Header = ({
                   <NavLink 
                     to="/about" 
                     className={({ isActive }) => 
-                      isActive ? "text-gray-200" : "text-white"
+                      isActive ? "text-white" : "text-white"
                     }
                     onMouseEnter={() => setIsAboutHovered(true)}
                     onMouseLeave={() => setIsAboutHovered(false)}
