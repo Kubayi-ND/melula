@@ -14,6 +14,7 @@ export const About = () => {
         title="ABOUT"
         subtitle={<></>}
         buttonText="SHOP"
+        buttonLink="shop"
          
       />
       <main >

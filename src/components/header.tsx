@@ -133,7 +133,7 @@ export const Header = ({
               <ul className="flex space-x-4 text-center text-md font-bold">
                 <li>
                   <a 
-                    href="shop" 
+                    href="../shop" 
                     className={isShopHovered ? "text-gray-200" : "text-white"}
                     onMouseEnter={() => setIsAboutHovered(true)}
                     onMouseLeave={() => setIsAboutHovered(false)}
@@ -143,7 +143,7 @@ export const Header = ({
                 </li>
                 <li>
                   <a 
-                    href="about" 
+                    href="../about" 
                     className={isAboutHovered ? "text-gray-200" : "text-white"}
                     onMouseEnter={() => setIsShopHovered(true)}
                     onMouseLeave={() => setIsShopHovered(false)}
